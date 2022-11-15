@@ -15,6 +15,5 @@ namespace TPfinal
         Estado estado=Estado.NOASIGNADO; 
         protected bool entregado = false;
 
-
     }
 }

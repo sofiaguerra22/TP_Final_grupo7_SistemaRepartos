@@ -31,7 +31,7 @@ namespace TPfinal
                     cEnvio auxEnvio = pila_envios.Pop();
                     if (auxEnvio.barrio== lista_pedidos[k].barrio)
                     {
-                        entro= vehiculo(lista_pedidos[k], camioneta)
+                        entro = vehiculo(lista_pedidos[k], camioneta);
                     }
                 }
             }
