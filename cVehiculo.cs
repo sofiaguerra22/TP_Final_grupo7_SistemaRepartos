@@ -44,7 +44,7 @@ namespace TPfinal
                 entro = capacidad(auxEnvio.articulo);
                 listaLlenado.Add(auxEnvio);
                 i++;
-                Console.WriteLine(auxEnvio.articulo);
+                Console.WriteLine("hola");
             }
         }
         public bool capacidad(cArticulos a)

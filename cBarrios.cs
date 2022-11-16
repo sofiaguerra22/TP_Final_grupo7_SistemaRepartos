@@ -40,14 +40,14 @@ namespace TPfinal
             Villa_Luro.Add("Parque_Avellaneda", 2.5F);
             Villa_Luro.Add("Mataderos", 3.7F);
             listaBarrios.Add(Mataderos);
-            Villa_Luro.Add("Liniers", 2.2F);
-            Villa_Luro.Add("Villa_Luro", 3.7F);
-            Villa_Luro.Add("Parque_Avellaneda", 2.3F);
-            Villa_Luro.Add("Villa_Lugano", 2.7F);
+            Mataderos.Add("Liniers", 2.2F);
+            Mataderos.Add("Villa_Luro", 3.7F);
+            Mataderos.Add("Parque_Avellaneda", 2.3F);
+            Mataderos.Add("Villa_Lugano", 2.7F);
             listaBarrios.Add(Villa_Real);
-            Villa_Luro.Add("Versalles", 1.7F);
-            Villa_Luro.Add("Villa_Devoto", 3.3F);
-            Villa_Luro.Add("Monte_Castro", 2.3F);
+            Villa_Real.Add("Versalles", 1.7F);
+            Villa_Real.Add("Villa_Devoto", 3.3F);
+            Villa_Real.Add("Monte_Castro", 2.3F);
         }
     }
 }

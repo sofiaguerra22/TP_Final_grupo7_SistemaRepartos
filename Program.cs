@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,13 +12,7 @@ namespace TPfinal
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new btn_Datosvehiculo());
-        }
-        public void ordenar_prioridad(List<cEnvio> listaLlenado)
+        static public void ordenar_prioridad(List<cEnvio> listaLlenado)
         {
             for (int k = 0; k < listaLlenado.Count - 1; k++)
             {
@@ -33,39 +28,49 @@ namespace TPfinal
                 }
             }
         }
-        public Stack<cEnvio> recorrido(List<cEnvio> listaEnvios, List<Dictionary<string, float>> listaBarrios)
+        static public Stack<cEnvio> recorrido(List<cEnvio> listaEnvios, List<Dictionary<string, float>> listaBarrios)
         {
             int pos = 0;
+            int cont = 0;
             Stack<cEnvio> aux = new Stack<cEnvio>();
-            for (int i = 0; i < listaBarrios.Count; i++)
+            for (int i = 0; i < listaBarrios.Count - 1; i++)
             {
                 for (int x = 0; x < listaBarrios[i].Count - 1; x++)
                 {
-                    if (listaBarrios[i].Keys.ElementAt(x) == listaEnvios[i].barrio)
+                    string b = listaBarrios[i].Keys.ElementAt(x);
+                    if (b == listaEnvios[i].barrio)
                     {
-                        if (x == 0)
-                            pos = x;
-
+                        
                         if (listaBarrios[i].Values.ElementAt(x) < listaBarrios[i].Values.ElementAt(x + 1))
                         {
                             pos = x;
                         }
+                        cont++;
                     }
+                    
                 }
-                for (int y = 0; y < listaBarrios.Count; y++)
+                if (cont != 0)
                 {
-                    if (listaEnvios[y].barrio == listaBarrios[y].Keys.ElementAt(pos))
+                    for (int y = 0; y < listaBarrios.Count - 1; y++)
                     {
-                        aux.Push(listaEnvios[y]);
-                        listaEnvios[y].km = listaBarrios[y].Values.ElementAt(pos);
+
+                        if (listaEnvios[y].barrio == listaBarrios[y].Keys.ElementAt(pos))
+                        {
+                            aux.Push(listaEnvios[y]);
+                            listaEnvios[y].km = listaBarrios[y].Values.ElementAt(pos);
+                        }
                     }
                 }
             }
             return aux;
 
         }
-        public void main2()
+        static public void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new btn_Datosvehiculo());
+        
             //Creo mis 3 vehiculos que se van a encargar de repartir
             cCamioneta camioneta = new cCamioneta(90,60);
             cFurgoneta furgoneta = new cFurgoneta();
