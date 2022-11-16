@@ -72,10 +72,10 @@ namespace TPfinal
             cFurgon furgon = new cFurgon();
 
             //Creo mis articulos 
-            cArticulo art1 = new cArticulo(3, 3, 3);
-            cArticulo art2 = new cArticulo(2, 3, 2);
-            cArticulo art3 = new cArticulo(1, 1, 1);
-            cArticulo art4 = new cArticulo(2, 1, 3);
+            cArticulos art1 = new cArticulos(3, 3, 3);
+            cArticulos art2 = new cArticulos(2, 3, 2);
+            cArticulos art3 = new cArticulos(1, 1, 1);
+            cArticulos art4 = new cArticulos(2, 1, 3);
 
             //Creo mis Envios
             cEnvio envio1 = new cEnvio("banana 1", art1, Estado.NOASIGNADO, false, "Liniers");

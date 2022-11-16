@@ -46,14 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\Desktop\Universidad Favaloro\2° Año\2do cuatrimestre\Laboratorio de programación 2\TP FINAL\cArticulo.cs">
-      <Link>cArticulo.cs</Link>
-    </Compile>
     <Compile Include="cCamioneta.cs" />
     <Compile Include="cEnvio.cs" />
     <Compile Include="cFurgon.cs" />
     <Compile Include="cFurgoneta.cs" />
     <Compile Include="cBarrios.cs" />
+    <Compile Include="cArticulos.cs" />
     <Compile Include="cVehiculo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

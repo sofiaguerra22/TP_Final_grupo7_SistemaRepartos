@@ -10,13 +10,13 @@ namespace TPfinal
     public class cEnvio
     { 
         public string direccion;
-        public cArticulo articulo;
+        public cArticulos articulo;
         public Estado estado = 0;
         public bool entregado = false;
         public string barrio;
         public float km { get; set; }
 
-        public cEnvio(string direccion, cArticulo articulo, Estado estado, bool entregado, string barrio)
+        public cEnvio(string direccion, cArticulos articulo, Estado estado, bool entregado, string barrio)
         {
             this.direccion = direccion;
             this.articulo = articulo;

@@ -47,7 +47,7 @@ namespace TPfinal
                 Console.WriteLine(auxEnvio.articulo);
             }
         }
-        public bool capacidad(cArticulo a)
+        public bool capacidad(cArticulos a)
         { //a es el articulo de la lista del vehiculo
             carga_actual=carga_actual + a.peso;
             if (carga_actual < cargaMax)
