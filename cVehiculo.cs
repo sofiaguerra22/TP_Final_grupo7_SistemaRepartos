@@ -15,8 +15,9 @@ namespace TPfinal
         protected float carga_actual;
         protected float volumen_actual;
         protected float volumenMax;
+        public float nafta;
         public List<cEnvio> listaLlenado { get; set; }
-        public cVehiculo(string _modelo, float _consumox100KM,float _cargaMax, float _volumenMax)
+        public cVehiculo(string _modelo, float _consumox100KM,float _cargaMax, float _volumenMax, float nafta)
         {
             this.modelo = _modelo;
             this.cargaMax = _cargaMax;
@@ -26,6 +27,7 @@ namespace TPfinal
             this.consumox100KM = _consumox100KM;
             this.listaLlenado = new List<cEnvio>();
             this.ID = ID++;
+            this.nafta = nafta;
         }
         public void imprimir()
         {
@@ -42,6 +44,7 @@ namespace TPfinal
                 entro = capacidad(auxEnvio.articulo);
                 listaLlenado.Add(auxEnvio);
                 i++;
+                Console.WriteLine(auxEnvio.articulo);
             }
         }
         public bool capacidad(cArticulo a)
@@ -59,21 +62,54 @@ namespace TPfinal
             }
             else return false;
         }
-        public void ordenar_prioridad()
-        { 
-            for(int k=0; k< listaLlenado.Count-1 ; k++)
+        public void contar_km_camioneta(Stack<cEnvio> Pila)
+        {
+            float acum = 0;
+            for (int i = 0; i<Pila.Count;i++)
             {
-                for (int i = 0; i < listaLlenado.Count - 1; i++)
-                {
-                    if(listaLlenado[i].estado> listaLlenado[i + 1].estado)
-                    {
-                        cEnvio aux;
-                        aux = listaLlenado[i];
-                        listaLlenado[i] = listaLlenado[i + 1];
-                        listaLlenado[i + 1] = aux;
-                    }
-                }
+               acum = Pila.Pop().km + acum;
+                if (acum > 600)
+                    cargar_nafta_camioneta();
             }
+            
+        }
+
+        public void cargar_nafta_camioneta()
+        {
+            nafta = 50;
+        }
+        public void contar_km_furgoneta(Stack<cEnvio> Pila)
+        {
+            float acum = 0;
+            for (int i = 0; i < Pila.Count; i++)
+            {
+                acum = Pila.Pop().km + acum;
+                if (acum > 3100)
+                    cargar_nafta_furgoneta();
+            }
+
+        }
+
+        public void cargar_nafta_furgoneta()
+        {
+            nafta = 220;
+        }
+        public void contar_km_furgon(Stack<cEnvio> Pila)
+        {
+            float acum = 0;
+            for (int i = 0; i < Pila.Count; i++)
+            {
+                acum = Pila.Pop().km + acum;
+                if (acum > 1000)
+                    cargar_nafta_furgon();
+            }
+
+        }
+
+        public void cargar_nafta_furgon()
+        {
+            nafta = 90;
         }
     }
 }
+

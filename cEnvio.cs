@@ -14,16 +14,15 @@ namespace TPfinal
         public Estado estado = 0;
         public bool entregado = false;
         public string barrio;
-        public cVehiculo vehiculoAsignado;
+        public float km { get; set; }
 
-        public cEnvio(string direccion, cArticulo articulo, Estado estado, bool entregado, string barrio, cVehiculo vehiculoAsignado)
+        public cEnvio(string direccion, cArticulo articulo, Estado estado, bool entregado, string barrio)
         {
             this.direccion = direccion;
             this.articulo = articulo;
             this.estado = estado;
             this.entregado = entregado;
             this.barrio = barrio;
-            this.vehiculoAsignado = vehiculoAsignado;
         }
         public Stack<cEnvio> recorrido(List<cEnvio> listaEnvios, List<Dictionary<string, float>> listaBarrios)
         {
@@ -48,6 +47,7 @@ namespace TPfinal
                     if(listaEnvios[y].barrio == listaBarrios[y].Keys.ElementAt(pos)) 
                     {
                         aux.Push(listaEnvios[y]);
+                        listaEnvios[y].km = listaBarrios[y].Values.ElementAt(pos);
                     }
                 }
             }

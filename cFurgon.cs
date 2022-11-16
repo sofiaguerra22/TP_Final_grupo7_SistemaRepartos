@@ -10,6 +10,6 @@ namespace TPfinal
     {
         private const float ahorroCombustible = 0.4F;
         
-        public cFurgon() : base("Iveco Daily", 9.048F, 4900F, 10.8F) { }
+        public cFurgon() : base("Iveco Daily", 9.048F, 4900F, 10.8F, 90) { }
     }
 }

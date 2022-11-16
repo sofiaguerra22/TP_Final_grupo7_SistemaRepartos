@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPfinal
 {
-    public class cMatriz
+    public class cBarrios
     {
         public List<Dictionary<string,float>> listaBarrios = new List<Dictionary<string, float>>();
         public Dictionary<string, float> Liniers = new Dictionary<string, float>();
@@ -14,17 +14,12 @@ namespace TPfinal
         public Dictionary<string, float> Villa_Luro = new Dictionary<string, float>();
         public Dictionary<string, float> Mataderos = new Dictionary<string, float>(); 
         public Dictionary<string, float> Villa_Real = new Dictionary<string, float>();
-       
-        public int Verificar(string barrio)
+
+        public cBarrios()
         {
-            int cant = listaBarrios.Count;
-            for (int i = 0; i < cant; i++)
-            {
-                if (barrio == )
-                    return 0;
-            }
-            return -1;
+            llenado();
         }
+
         public void llenado()
         {
             listaBarrios.Add(Liniers);
@@ -49,7 +44,7 @@ namespace TPfinal
             Villa_Luro.Add("Villa_Luro", 3.7F);
             Villa_Luro.Add("Parque_Avellaneda", 2.3F);
             Villa_Luro.Add("Villa_Lugano", 2.7F);
-            listaBarrios.Add(Mataderos);
+            listaBarrios.Add(Villa_Real);
             Villa_Luro.Add("Versalles", 1.7F);
             Villa_Luro.Add("Villa_Devoto", 3.3F);
             Villa_Luro.Add("Monte_Castro", 2.3F);

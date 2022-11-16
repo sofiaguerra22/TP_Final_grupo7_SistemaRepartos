@@ -12,7 +12,7 @@ namespace TPfinal
 {
     public partial class btn_Datosvehiculo : Form
     {
-        cVehiculo vehiculo = new cVehiculo("autito",20,30,30);
+        cVehiculo vehiculo = new cVehiculo("autito",20,30,30,30);
         public btn_Datosvehiculo()
         {
             InitializeComponent();
