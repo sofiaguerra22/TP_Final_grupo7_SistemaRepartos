@@ -20,21 +20,6 @@ namespace TPfinal
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new btn_Datosvehiculo());
         }
-        static void guardar_vehiculos(Stack<cEnvio> pila_envios, List<cEnvio> lista_pedidos)
-        {
-            int i = 0;
-            bool entro = false;
-            while(pila_envios.Count != 0 && i < pila_envios.Count)
-            {
-                for(int k=0; k<pila_envios.Count; k++)
-                {
-                    cEnvio auxEnvio = pila_envios.Pop();
-                    if (auxEnvio.barrio== lista_pedidos[k].barrio)
-                    {
-                        entro = vehiculo(lista_pedidos[k], camioneta);
-                    }
-                }
-            }
-        }
+
     }
 }
