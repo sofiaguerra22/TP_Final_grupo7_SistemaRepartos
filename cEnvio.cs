@@ -24,30 +24,27 @@ namespace TPfinal
             this.entregado = entregado;
             this.barrio = barrio;
         }
-        public Stack<cEnvio> recorrido(List<cEnvio> listaEnvios, List<Dictionary<string, float>> listaBarrios)
+        public Stack<cEnvio> recorrido(List<cEnvio> listaEnvios, Dictionary<string, Dictionary<string,float>>listaBarrios)
         {
             int pos = 0;
             Stack<cEnvio> aux = new Stack<cEnvio>();
             for (int i = 0; i < listaBarrios.Count; i++)
             {
-                for (int x = 0; x < listaBarrios[i].Count - 1; x++)
+                for (int x = 0; x < listaBarrios.Values.Count-1; x++)
                 {
-                    if (listaBarrios[i].Keys.ElementAt(x) == listaEnvios[i].barrio)
+                    if (listaBarrios.ElementAt(i).Key==(listaEnvios[i].barrio))
                     {
-                        if (x == 0)
-                            pos = x;
-
-                        if (listaBarrios[i].Values.ElementAt(x) < listaBarrios[i].Values.ElementAt(x + 1))
+                        if (listaBarrios.ElementAt(i).Value.ElementAt(x).Value< listaBarrios.ElementAt(i).Value.ElementAt(x + 1).Value)
                         {
                              pos = x;
                         }
                     }
                 }
                 for(int y = 0; y < listaBarrios.Count; y++) {
-                    if(listaEnvios[y].barrio == listaBarrios[y].Keys.ElementAt(pos)) 
+                    if(listaEnvios[y].barrio == listaBarrios.ElementAt(y).Value.ElementAt(pos).Key) 
                     {
                         aux.Push(listaEnvios[y]);
-                        listaEnvios[y].km = listaBarrios[y].Values.ElementAt(pos);
+                        listaEnvios[y].km = listaBarrios.ElementAt(y).Value.ElementAt(pos).Value;
                     }
                 }
             }

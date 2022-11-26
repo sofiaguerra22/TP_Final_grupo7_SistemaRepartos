@@ -8,13 +8,14 @@ namespace TPfinal
 {
     public class cPrueba
     {
+        public int contador { get; };
         public Dictionary<string, Dictionary> Barrios = new Dictionary<string, Dictionary>();
         public Dictionary<string, float> Versalles = new Dictionary<string, float>();
         public Dictionary<string, float> Villa_Luro = new Dictionary<string, float>();
         public Dictionary<string, float> Mataderos = new Dictionary<string, float>();
         public Dictionary<string, float> Villa_Real = new Dictionary<string, float>();
 
-        public cBarrios()
+        public cPrueba()
         {
             llenado();
         }
