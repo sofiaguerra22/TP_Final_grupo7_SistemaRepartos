@@ -50,6 +50,7 @@ namespace TPfinal
             Villa_Real.Add("Monte_Castro", 2.3F);
         }*/
         public Dictionary<string, Dictionary<string,float>> Barrios = new Dictionary<string, Dictionary<string,float>>();
+        public Dictionary<string, float> Liniers = new Dictionary<string, float>();
         public Dictionary<string, float> Versalles = new Dictionary<string, float>();
         public Dictionary<string, float> Villa_Luro = new Dictionary<string, float>();
         public Dictionary<string, float> Mataderos = new Dictionary<string, float>();
@@ -62,6 +63,12 @@ namespace TPfinal
 
         public void llenado()
         {
+    
+            Liniers.Add("Versalles", 4);
+            Liniers.Add("Villa_Luro", 2);
+            Liniers.Add("Mataderos", 2.2F);
+            Liniers.Add("Tres_de_febrero", 6);
+            Barrios.Add("Liniers", Liniers);
             Versalles.Add("Liniers", 4);
             Versalles.Add("Villa_Real", 1.7F);
             Versalles.Add("Monte_Castro", 2.4F);

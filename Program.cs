@@ -36,28 +36,21 @@ namespace TPfinal
             {
                 for (int x = 0; x < listaBarrios.ElementAt(i).Value.Count-1; x++)
                 {
+                    for(int k = 0; k < listaEnvios.Count; k++) { 
                     Console.WriteLine("Esta entrando");
-                    if (listaBarrios.ElementAt(i).Key==(listaEnvios[i].barrio))
+                    if (listaBarrios.ElementAt(i).Key==(listaEnvios[k].barrio))
                     {
                         Console.WriteLine("Esta entrando");
                         if (listaBarrios.ElementAt(i).Value.ElementAt(x).Value < listaBarrios.ElementAt(i).Value.ElementAt(x + 1).Value)
                         {
                              pos = x;
-                             aux.Push(listaEnvios[i]);
+                             aux.Push(listaEnvios[k]);
                              Console.WriteLine("SE ESTA LLENANDO LA PILAAAAAAA");
-                             listaEnvios[i].km = listaBarrios.ElementAt(i).Value.ElementAt(pos).Value;
+                             listaEnvios[k].km = listaBarrios.ElementAt(i).Value.ElementAt(pos).Value;
                         }
                     }
-                }
-                //lo de aca abajo me estaba tirando error asi q lo meti dentro de la funcion y a la mierda, capaz esta mal pero me tiraba exception la condicion del if
-                /*for(int y = 0; y < listaBarrios.Count; y++) {
-                    if (listaBarrios.ElementAt(y).Value.ElementAt(pos).Key.Contains(listaEnvios[y].barrio))
-                    {
-                        aux.Push(listaEnvios[y]);
-                        Console.WriteLine("SE ESTA LLENANDO LA PILAAAAAAA");
-                        listaEnvios[y].km = listaBarrios.ElementAt(y).Value.ElementAt(pos).Value;
                     }
-                }*/
+                }
             }
             return aux;
 
